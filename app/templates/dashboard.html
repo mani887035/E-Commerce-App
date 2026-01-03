@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - ShopSmart{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 32px 24px;">
+    <h1 class="page-title" style="margin-bottom: 32px;">Welcome back, {{ current_user.name }}!</h1>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon">📦</div>
+            <div class="stat-value" id="totalOrders">0</div>
+            <div class="stat-label">Total Orders</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">❤️</div>
+            <div class="stat-value" id="totalFavorites">0</div>
+            <div class="stat-label">Favorites</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">⭐</div>
+            <div class="stat-value" id="totalReviews">0</div>
+            <div class="stat-label">Reviews Given</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🔍</div>
+            <div class="stat-value" id="totalSearches">0</div>
+            <div class="stat-label">Searches</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px;">
+        <!-- Recent Orders -->
+        <div class="card">
+            <div class="card-body">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3>Recent Orders</h3>
+                    <a href="{{ url_for('orders.list_orders') }}" class="btn btn-ghost btn-sm">View All</a>
+                </div>
+                <div id="recentOrders">
+                    <div class="empty-state" style="padding: 24px 0;">
+                        <p>Loading orders...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search History -->
+        <div class="card">
+            <div class="card-body">
+                <h3 style="margin-bottom: 20px;">Recent Searches</h3>
+                <div id="searchHistory">
+                    <div class="empty-state" style="padding: 24px 0;">
+                        <p>Loading searches...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Favorites Section -->
+    <div class="card" style="margin-top: 32px;">
+        <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3>Your Favorites</h3>
+                <a href="{{ url_for('products.list_favorites') }}" class="btn btn-ghost btn-sm">View All</a>
+            </div>
+            <div id="favoritesList"
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
+                <div class="empty-state" style="grid-column: 1 / -1; padding: 24px 0;">
+                    <p>Loading favorites...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Load dashboard data
+    async function loadDashboardData() {
+        // Load orders
+        try {
+            const ordersRes = await fetch('/orders/', { headers: { 'Accept': 'application/json' } });
+            const ordersData = await ordersRes.json();
+            document.getElementById('totalOrders').textContent = ordersData.orders?.length || 0;
+
+            const recentOrdersDiv = document.getElementById('recentOrders');
+            if (ordersData.orders && ordersData.orders.length > 0) {
+                const recentOrders = ordersData.orders.slice(0, 3);
+                recentOrdersDiv.innerHTML = recentOrders.map(order => `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border-color);">
+                        <div>
+                            <div style="font-weight: 500;">Order #${order.id}</div>
+                            <div style="font-size: 0.813rem; color: var(--text-muted);">${new Date(order.order_date).toLocaleDateString()}</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-weight: 600;">₹${Math.round(order.total_amount)}</div>
+                            <span class="order-status ${order.status}">${order.status}</span>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                recentOrdersDiv.innerHTML = '<div class="empty-state" style="padding: 24px 0;"><p>No orders yet</p></div>';
+            }
+        } catch (error) {
+            console.error('Error loading orders:', error);
+        }
+
+        // Load favorites
+        try {
+            const favRes = await fetch('/products/favorites', { headers: { 'Accept': 'application/json' } });
+            const favData = await favRes.json();
+            document.getElementById('totalFavorites').textContent = favData.favorites?.length || 0;
+
+            const favDiv = document.getElementById('favoritesList');
+            if (favData.favorites && favData.favorites.length > 0) {
+                const recentFavs = favData.favorites.slice(0, 4);
+                favDiv.innerHTML = recentFavs.map(product => `
+                    <a href="/products/${product.id}" class="card" style="text-decoration: none;">
+                        <div class="card-image" style="aspect-ratio: 1; font-size: 2rem; display: flex; align-items: center; justify-content: center; background: var(--bg-tertiary);">
+                            ${getCategoryEmoji(product.category)}
+                        </div>
+                        <div class="card-body" style="padding: 12px;">
+                            <div style="font-weight: 500; font-size: 0.875rem; margin-bottom: 4px;">${product.name}</div>
+                            <div style="color: var(--primary-600); font-weight: 600;">₹${Math.round(product.price)}</div>
+                        </div>
+                    </a>
+                `).join('');
+            } else {
+                favDiv.innerHTML = '<div class="empty-state" style="grid-column: 1 / -1; padding: 24px 0;"><p>No favorites yet</p></div>';
+            }
+        } catch (error) {
+            console.error('Error loading favorites:', error);
+        }
+
+        // Load search history
+        try {
+            const searchRes = await fetch('/products/search-history');
+            const searchData = await searchRes.json();
+            document.getElementById('totalSearches').textContent = searchData.history?.length || 0;
+
+            const searchDiv = document.getElementById('searchHistory');
+            if (searchData.history && searchData.history.length > 0) {
+                const recentSearches = searchData.history.slice(0, 5);
+                searchDiv.innerHTML = recentSearches.map(search => `
+                    <a href="/products/?search=${encodeURIComponent(search.query)}" 
+                       style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border-color); text-decoration: none; color: var(--text-primary);">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span style="color: var(--text-muted);">🔍</span>
+                            <span>${search.query}</span>
+                        </div>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">${new Date(search.searched_at).toLocaleDateString()}</span>
+                    </a>
+                `).join('');
+            } else {
+                searchDiv.innerHTML = '<div class="empty-state" style="padding: 24px 0;"><p>No searches yet</p></div>';
+            }
+        } catch (error) {
+            console.error('Error loading search history:', error);
+        }
+    }
+
+    function getCategoryEmoji(category) {
+        const emojis = {
+            'toys': '🧸',
+            'electronics': '📱',
+            'dresses': '👗',
+            'cosmetics': '💄',
+            'footwear': '👟'
+        };
+        return emojis[category] || '📦';
+    }
+
+    loadDashboardData();
+</script>
+{% endblock %}

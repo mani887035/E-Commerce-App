@@ -1,0 +1,542 @@
+[
+    {
+        "name": "Samsung Galaxy S24 Ultra 5G",
+        "description": "📱 FLAGSHIP PERFORMANCE: Powered by Snapdragon 8 Gen 3 processor for lightning-fast performance. 📸 200MP CAMERA: Capture stunning photos with advanced AI photography and 100x Space Zoom. ✍️ S PEN INCLUDED: Built-in S Pen for notes, sketches, and remote control. 🔋 5000mAh BATTERY: All-day battery life with 45W super-fast charging. 💎 TITANIUM FRAME: Premium build with Gorilla Armor display. 1 Year Manufacturer Warranty.",
+        "price": 129999,
+        "category": "electronics",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Samsung_Galaxy_S24_Ultra.jpg",
+        "stock": 25,
+        "avg_rating": 4.5,
+        "rating_count": 12847
+    },
+    {
+        "name": "Apple iPhone 15 Pro Max",
+        "description": "🍎 A17 PRO CHIP: The most powerful chip ever in a smartphone. 📹 PRO CAMERA SYSTEM: 48MP main camera with 5x optical zoom. 🎮 CONSOLE-QUALITY GAMING: Hardware-accelerated ray tracing. ⚡ USB-C & FAST CHARGING: All-day battery with USB-C convenience. 🛡️ TITANIUM DESIGN: Aerospace-grade titanium, lightest Pro ever. Ceramic Shield front, surgical-grade stainless steel.",
+        "price": 159900,
+        "category": "electronics",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/IPhone_15_Pro_Max.JPG",
+        "stock": 30,
+        "avg_rating": 4.6,
+        "rating_count": 8934
+    },
+    {
+        "name": "Sony WH-1000XM5 Wireless Headphones",
+        "description": "🎧 INDUSTRY-LEADING ANC: 8 microphones and 2 processors for best-in-class noise cancellation. 🎵 EXCEPTIONAL SOUND: 30mm drivers with LDAC for Hi-Res Audio wireless. ⏱️ 30-HOUR BATTERY: Quick charge - 3 min = 3 hours playback. 🎤 CRYSTAL CLEAR CALLS: AI-powered noise reduction for calls. ☁️ ULTRA LIGHTWEIGHT: 250g with soft-fit leather for all-day comfort. Includes carry case.",
+        "price": 29990,
+        "category": "electronics",
+        "image_url": "https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "stock": 50,
+        "avg_rating": 4.7,
+        "rating_count": 15623
+    },
+    {
+        "name": "Apple MacBook Air M3",
+        "description": "💻 M3 CHIP: 8-core CPU, 10-core GPU for incredible performance. 🖥️ 15.3\" LIQUID RETINA: Stunning display with 500 nits brightness. ⚡ 18-HOUR BATTERY: Longest battery life ever in a MacBook Air. 🔇 SILENT OPERATION: Fanless design for zero noise. 🪶 IMPOSSIBLY THIN: Just 11.5mm thin and 1.51kg. MagSafe charging, 1080p FaceTime camera, 6-speaker sound system.",
+        "price": 134900,
+        "category": "electronics",
+        "image_url": "https://images.unsplash.com/photo-1611186871348-b1ec696e52c9?q=80&w=800",
+        "stock": 20,
+        "avg_rating": 4.8,
+        "rating_count": 5678
+    },
+    {
+        "name": "boAt Airdopes 141",
+        "description": "🎵 MASSIVE 42H PLAYTIME: 8H per charge + 34H with case. 🔊 8MM DRIVERS: ENx Tech for immersive sound and clear calls. ⚡ ASAP CHARGE: 10 min charge = 75 min playtime. 💧 IPX4 WATER RESISTANT: Sweat and splash resistant for workouts. 📱 INSTANT PAIRING: IWP technology for seamless connection. Lightweight design, touch controls, voice assistant support.",
+        "price": 1299,
+        "category": "electronics",
+        "image_url": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=800",
+        "stock": 200,
+        "avg_rating": 4.1,
+        "rating_count": 285634
+    },
+    {
+        "name": "OnePlus Nord CE 3 Lite 5G",
+        "description": "📱 SNAPDRAGON 695: Smooth 5G performance for everyday tasks. 📸 108MP CAMERA: Capture ultra-detailed photos in any lighting. 🔋 5000mAh + 67W CHARGING: 0-80% in just 30 minutes. 🖥️ 120Hz DISPLAY: Buttery smooth scrolling and gaming. 💾 8GB RAM + 128GB: Ample storage for apps and media. OxygenOS based on Android 13.",
+        "price": 19999,
+        "category": "electronics",
+        "image_url": "https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=800",
+        "stock": 75,
+        "avg_rating": 4.3,
+        "rating_count": 45678
+    },
+    {
+        "name": "Fire TV Stick 4K Max",
+        "description": "📺 4K ULTRA HD: Stunning picture with Dolby Vision, HDR10+. 🔊 DOLBY ATMOS: Immersive 3D audio experience. 🎮 GAMING READY: Play Luna and Xbox cloud games. 📡 WIFI 6E SUPPORT: Fastest, smoothest streaming. 🗣️ ALEXA VOICE REMOTE: Hands-free TV control. Access Prime Video, Netflix, Disney+, Hotstar and more. Easy setup in minutes.",
+        "price": 6499,
+        "category": "electronics",
+        "image_url": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=800",
+        "stock": 150,
+        "avg_rating": 4.4,
+        "rating_count": 98765
+    },
+    {
+        "name": "Samsung 55\" Crystal 4K Smart TV",
+        "description": "📺 CRYSTAL PROCESSOR 4K: AI-powered upscaling for stunning clarity. 🎨 1 BILLION COLORS: Dynamic Crystal Color for vivid visuals. 🎮 GAMING HUB: Access Xbox, PlayStation, GeForce NOW instantly. 🔊 Q-SYMPHONY: TV and soundbar work together. 📱 SMARTTHINGS: Control your smart home from TV. HDR10+, Alexa & Google Assistant built-in. 2 Year Warranty.",
+        "price": 47990,
+        "category": "electronics",
+        "image_url": "https://images.unsplash.com/photo-1593359677879-a4bb92f829ec?q=80&w=800",
+        "stock": 35,
+        "avg_rating": 4.4,
+        "rating_count": 12345
+    },
+    {
+        "name": "JBL Flip 6 Portable Speaker",
+        "description": "🔊 POWERFUL SOUND: Racetrack-shaped driver for bold, punchy bass. 💧 IP67 WATERPROOF: Fully waterproof and dustproof. ⏱️ 12-HOUR PLAYTIME: Party all day and night. 🔗 PARTYBOOST: Connect multiple JBL speakers together. 🎤 SPEAKERPHONE: Built-in noise-cancelling speakerphone. USB-C charging, available in 10 vibrant colors. Includes carrying strap.",
+        "price": 12999,
+        "category": "electronics",
+        "image_url": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=800",
+        "stock": 80,
+        "avg_rating": 4.5,
+        "rating_count": 34567
+    },
+    {
+        "name": "Kindle Paperwhite (16GB)",
+        "description": "📚 6.8\" DISPLAY: Larger, paper-like glare-free screen. 💡 ADJUSTABLE WARM LIGHT: Shift from white to amber. 💧 IPX8 WATERPROOF: Read in the bath or by the pool. ⏱️ 10-WEEK BATTERY: Read for weeks on single charge. 📖 THOUSANDS OF BOOKS: Access millions of titles. 20% faster page turns, USB-C charging. Ad-supported version.",
+        "price": 14999,
+        "category": "electronics",
+        "image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800",
+        "stock": 60,
+        "avg_rating": 4.6,
+        "rating_count": 56789
+    },
+    {
+        "name": "Men's Slim Fit Cotton Shirt",
+        "description": "👔 100% PREMIUM COTTON: Soft, breathable fabric for all-day comfort. ✂️ SLIM FIT: Modern tailored silhouette that flatters. 🧵 QUALITY STITCHING: Reinforced seams for durability. 🎨 VERSATILE COLORS: Available in 12 classic shades. 👔 FORMAL & CASUAL: Perfect for office or weekend wear. Machine washable, wrinkle-resistant finish. Size: S-3XL.",
+        "price": 1299,
+        "category": "fashion",
+        "image_url": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=800",
+        "stock": 150,
+        "avg_rating": 4.2,
+        "rating_count": 23456
+    },
+    {
+        "name": "Women's Ethnic Anarkali Kurta Set",
+        "description": "👗 STUNNING ANARKALI: Floor-length ethnic dress with flared silhouette. 🌸 INTRICATE EMBROIDERY: Beautiful thread work and sequin detailing. 👘 COMPLETE SET: Includes kurta, palazzo pants, and dupatta. 🧵 PREMIUM FABRIC: Soft georgette with cotton lining. 🎉 FESTIVE READY: Perfect for weddings, Diwali, and celebrations. Dry clean recommended. Size: XS-XXL.",
+        "price": 2999,
+        "category": "fashion",
+        "image_url": "https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=800",
+        "stock": 80,
+        "avg_rating": 4.4,
+        "rating_count": 8765
+    },
+    {
+        "name": "Levi's Men's 511 Slim Fit Jeans",
+        "description": "👖 ICONIC 511 FIT: Slim from hip to ankle for modern look. 🧵 PREMIUM DENIM: Authentic Levi's quality since 1873. 💪 STRETCH COMFORT: Advanced stretch fabric for flexibility. 🎨 CLASSIC INDIGO: Timeless wash that goes with everything. 🔘 5-POCKET STYLING: Classic design with riveted pockets. Machine washable, imported. Waist: 28-42.",
+        "price": 3499,
+        "category": "fashion",
+        "image_url": "https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=800",
+        "stock": 100,
+        "avg_rating": 4.3,
+        "rating_count": 45678
+    },
+    {
+        "name": "Women's Running Shoes - Nike Revolution 6",
+        "description": "👟 SOFT CUSHIONING: Foam midsole absorbs impact. 🌬️ BREATHABLE MESH: Keeps feet cool during runs. 🔒 SECURE FIT: Padded collar and tongue for comfort. 🏃 DURABLE OUTSOLE: Rubber pods for long-lasting traction. ⚖️ LIGHTWEIGHT: Perfect for daily running and gym. Available in multiple colors. Size: UK 3-9.",
+        "price": 3995,
+        "category": "fashion",
+        "image_url": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800",
+        "stock": 120,
+        "avg_rating": 4.4,
+        "rating_count": 67890
+    },
+    {
+        "name": "American Tourister Backpack",
+        "description": "🎒 SPACIOUS 32L: Fits 15.6\" laptop with dedicated compartment. 🛡️ WATER RESISTANT: Keeps belongings safe in light rain. 💪 ERGONOMIC DESIGN: Padded shoulder straps and back panel. 🔐 ANTI-THEFT: Hidden pocket for valuables. 📚 ORGANIZER POCKETS: Multiple compartments for accessories. Perfect for college, office, and travel. 3 Year Warranty.",
+        "price": 1999,
+        "category": "fashion",
+        "image_url": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=800",
+        "stock": 200,
+        "avg_rating": 4.3,
+        "rating_count": 89012
+    },
+    {
+        "name": "Women's Banarasi Silk Saree",
+        "description": "🥻 PURE BANARASI SILK: Authentic handwoven saree from Varanasi. ✨ ZARI WORK: Rich gold and silver thread embroidery. 🎨 TRADITIONAL MOTIFS: Classic paisley and floral patterns. 📏 6.3 METERS: Standard length with contrast blouse piece. 🎁 GIFT READY: Comes in beautiful packaging. Perfect for weddings and special occasions. Dry clean only.",
+        "price": 4999,
+        "category": "fashion",
+        "image_url": "https://images.unsplash.com/photo-1610030469983-98e52244a5cc?q=80&w=800",
+        "stock": 40,
+        "avg_rating": 4.5,
+        "rating_count": 12345
+    },
+    {
+        "name": "Men's Leather Formal Belt",
+        "description": "🔘 GENUINE LEATHER: Premium full-grain leather that ages beautifully. ⚙️ ZINC ALLOY BUCKLE: Rust-resistant, classic design. 📏 ADJUSTABLE: Easy-cut sizing for perfect fit. 🎨 REVERSIBLE: Black and brown - two belts in one! 👔 PROFESSIONAL LOOK: 35mm width, perfect for formal wear. Fits waist 28-44 inches. Gift box included.",
+        "price": 799,
+        "category": "fashion",
+        "image_url": "https://images.unsplash.com/photo-1624222247344-550fb80f0212?q=80&w=800",
+        "stock": 180,
+        "avg_rating": 4.2,
+        "rating_count": 34567
+    },
+    {
+        "name": "Ray-Ban Aviator Classic Sunglasses",
+        "description": "😎 ICONIC DESIGN: Original aviator style since 1937. 🌞 UV PROTECTION: 100% UV400 protection for your eyes. 🔍 GLASS LENSES: Crystal clear optical quality. 🏆 GENUINE RAY-BAN: Authentic with certificate and case. 🪶 LIGHTWEIGHT: Comfortable for all-day wear. Gold frame with G-15 green lenses. Includes cleaning cloth and case.",
+        "price": 8490,
+        "category": "fashion",
+        "image_url": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=800",
+        "stock": 50,
+        "avg_rating": 4.6,
+        "rating_count": 23456
+    },
+    {
+        "name": "Prestige Induction Cooktop",
+        "description": "🔥 1600W POWER: Fast and efficient cooking. 🎛️ FEATHER TOUCH: Easy-to-use button controls. ⏱️ AUTO TIMER: Set cooking time up to 3 hours. 🛡️ SAFETY FEATURES: Auto-off, anti-magnetic wall. 📱 INDIAN MENU: Pre-set options for roti, dosa, fry. Works with all induction-compatible cookware. 1 Year Warranty.",
+        "price": 2299,
+        "category": "home",
+        "image_url": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800",
+        "stock": 100,
+        "avg_rating": 4.3,
+        "rating_count": 56789
+    },
+    {
+        "name": "Philips Air Fryer HD9200",
+        "description": "🍟 RAPID AIR TECHNOLOGY: Crispy food with 90% less fat. 📊 4.1L CAPACITY: Cook for entire family. 🌡️ ADJUSTABLE TEMP: 80°C to 200°C range. ⏱️ 60-MIN TIMER: Set and forget cooking. 🧹 EASY CLEAN: Dishwasher-safe removable parts. Includes recipe booklet. 2 Year Warranty.",
+        "price": 7495,
+        "category": "home",
+        "image_url": "https://images.unsplash.com/photo-1630154462371-da0865e89d67?q=80&w=800",
+        "stock": 60,
+        "avg_rating": 4.4,
+        "rating_count": 34567
+    },
+    {
+        "name": "Milton Thermosteel Flask 1L",
+        "description": "🌡️ 24-HOUR HOT/COLD: Vacuum insulation keeps drinks perfect. 🛡️ STAINLESS STEEL: Food-grade 304 stainless steel. 💧 LEAK PROOF: Secure lid prevents spills. 🏔️ PERFECT FOR TRAVEL: Ideal for office, gym, outdoors. 🧹 EASY TO CLEAN: Wide mouth opening. BPA-free, rust-proof. Available in 500ml, 750ml, 1L sizes.",
+        "price": 899,
+        "category": "home",
+        "image_url": "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?q=80&w=800",
+        "stock": 200,
+        "avg_rating": 4.4,
+        "rating_count": 78901
+    },
+    {
+        "name": "Pigeon 3-Burner Gas Stove",
+        "description": "🔥 3 HIGH-EFFICIENCY BRASS BURNERS: Uniform heat distribution. 🛡️ TOUGHENED GLASS TOP: Heat and scratch resistant. ⚙️ 360° SWIVEL NOZZLE: Easy gas cylinder connection. 🧹 SPILL-PROOF DESIGN: Easy to clean surface. 🏠 ISI CERTIFIED: Meets Indian safety standards. Includes gas inlet pipe. 2 Year Warranty.",
+        "price": 3499,
+        "category": "home",
+        "image_url": "https://images.unsplash.com/photo-1588644525273-f37b60d705bc?q=80&w=800",
+        "stock": 80,
+        "avg_rating": 4.2,
+        "rating_count": 45678
+    },
+    {
+        "name": "Amazon Basics Microwave Oven 20L",
+        "description": "🔊 700W POWER: Quick and efficient cooking. 📊 20L CAPACITY: Perfect for small to medium families. 🎛️ 5 POWER LEVELS: Customize cooking intensity. 🍿 QUICK START: One-touch presets for common foods. ⏱️ 60-MIN TIMER: Precise cooking control. Child lock feature, easy-clean interior. 1 Year Warranty.",
+        "price": 5499,
+        "category": "home",
+        "image_url": "https://images.unsplash.com/photo-1574265353392-69027878619b?q=80&w=800",
+        "stock": 90,
+        "avg_rating": 4.1,
+        "rating_count": 23456
+    },
+    {
+        "name": "Dyson V12 Cordless Vacuum",
+        "description": "🌀 150 AIR WATTS: Powerful suction for deep cleaning. 🔋 60-MIN RUNTIME: Fade-free power with swappable battery. 📊 LCD SCREEN: Real-time performance display. 🦠 HEPA FILTRATION: Captures 99.97% allergens and particles. 🔄 VERSATILE: Floor to ceiling cleaning. 5 accessories included. 2 Year Dyson Warranty.",
+        "price": 52900,
+        "category": "home",
+        "image_url": "https://images.unsplash.com/photo-1622438133535-61266b0a1122?q=80&w=800",
+        "stock": 25,
+        "avg_rating": 4.6,
+        "rating_count": 8765
+    },
+    {
+        "name": "Wipro 9W LED Bulb (Pack of 6)",
+        "description": "💡 ENERGY EFFICIENT: 9W LED = 60W incandescent. ☀️ BRIGHT OUTPUT: 810 lumens, 6500K cool daylight. ⏱️ 25,000 HOURS: Long lifespan reduces replacements. 💰 SAVE MONEY: Up to 88% energy savings. 🌍 ECO-FRIENDLY: Mercury-free, recyclable. B22 base, instant start. 2 Year Warranty.",
+        "price": 399,
+        "category": "home",
+        "image_url": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800",
+        "stock": 300,
+        "avg_rating": 4.3,
+        "rating_count": 156789
+    },
+    {
+        "name": "Solimo Premium Bedsheet Double",
+        "description": "🛏️ 144 TC COTTON: Soft, breathable fabric for comfort. 📏 KING SIZE: 228 x 254 cm with 2 pillow covers. 🎨 COLORFAST: Vibrant prints that don't fade. 🧵 QUALITY STITCHING: Reinforced hems for durability. 🧺 EASY CARE: Machine washable, tumble dry low. Shrink resistant. Multiple designs available.",
+        "price": 599,
+        "category": "home",
+        "image_url": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=800",
+        "stock": 150,
+        "avg_rating": 4.1,
+        "rating_count": 234567
+    },
+    {
+        "name": "Borosil Glass Lunch Box Set",
+        "description": "🥗 MICROWAVE SAFE: Borosilicate glass, oven and freezer safe. 🔒 LEAK-PROOF: Airtight lid keeps food fresh. 🧹 EASY CLEAN: Non-porous, doesn't absorb odors. 💪 DURABLE: Thermal shock resistant. 📦 SET OF 3: 400ml + 400ml + 620ml containers. Including insulated carry bag. Dishwasher safe.",
+        "price": 1099,
+        "category": "home",
+        "image_url": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800",
+        "stock": 120,
+        "avg_rating": 4.4,
+        "rating_count": 45678
+    },
+    {
+        "name": "Mamaearth Vitamin C Face Serum",
+        "description": "✨ VITAMIN C 20%: Brightens skin and reduces dark spots. 🍊 NATURAL INGREDIENTS: Orange extract and turmeric. 💧 HYDRATING: Hyaluronic acid for plump skin. 🌿 MADE SAFE CERTIFIED: Non-toxic, dermatologically tested. 🐰 CRUELTY FREE: Never tested on animals. Suitable for all skin types. 30ml bottle.",
+        "price": 599,
+        "category": "beauty",
+        "image_url": "https://images.unsplash.com/photo-1620916566398-39f1143f2c42?q=80&w=800",
+        "stock": 200,
+        "avg_rating": 4.2,
+        "rating_count": 89012
+    },
+    {
+        "name": "Lakme 9 to 5 Primer + Matte Foundation",
+        "description": "💄 BUILT-IN PRIMER: Smooth application, long-lasting wear. 🕐 12-HOUR STAY: Doesn't smudge or transfer. ☀️ SPF 20: Sun protection included. 🎨 25 SHADES: Perfect match for Indian skin tones. 💧 OIL-FREE: Controls shine all day. Dermatologically tested. 25ml tube.",
+        "price": 575,
+        "category": "beauty",
+        "image_url": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=800",
+        "stock": 180,
+        "avg_rating": 4.1,
+        "rating_count": 67890
+    },
+    {
+        "name": "L'Oreal Paris Hair Serum",
+        "description": "💇 6 OIL BLEND: Argan, coconut, and 4 more precious oils. ✨ FRIZZ CONTROL: Tames flyaways for smooth, shiny hair. 🌡️ HEAT PROTECTION: Up to 230°C styling protection. 🪶 LIGHTWEIGHT: Non-greasy, absorbs quickly. 🌸 FRESH FRAGRANCE: Subtle floral scent. Suitable for all hair types. 100ml bottle.",
+        "price": 599,
+        "category": "beauty",
+        "image_url": "https://images.unsplash.com/photo-1526947425960-945c6e72858f?q=80&w=800",
+        "stock": 150,
+        "avg_rating": 4.3,
+        "rating_count": 123456
+    },
+    {
+        "name": "Biotique Bio Cucumber Toner",
+        "description": "🥒 CUCUMBER EXTRACT: Natural cooling and refreshing. 🌿 AYURVEDIC FORMULA: Himalayan water and herbs. 💧 PORE TIGHTENING: Reduces large pores appearance. ⚖️ pH BALANCED: Maintains skin's natural balance. 🧴 ALCOHOL-FREE: Gentle on sensitive skin. 100% vegetarian. 120ml bottle.",
+        "price": 199,
+        "category": "beauty",
+        "image_url": "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800",
+        "stock": 250,
+        "avg_rating": 4.0,
+        "rating_count": 45678
+    },
+    {
+        "name": "Nivea Soft Light Moisturizer",
+        "description": "💧 VITAMIN E & JOJOBA OIL: Deep nourishment for soft skin. ☁️ LIGHT FORMULA: Non-sticky, absorbs quickly. 👐 MULTI-USE: Face, hands, and body. 🌸 FRESH FRAGRANCE: Light, pleasant scent. 🧴 NON-GREASY: Perfect under makeup. Dermatologically approved. 300ml jar.",
+        "price": 299,
+        "category": "beauty",
+        "image_url": "https://images.unsplash.com/photo-1554372562-ff3f83794d25?q=80&w=800",
+        "stock": 300,
+        "avg_rating": 4.4,
+        "rating_count": 234567
+    },
+    {
+        "name": "Maybelline Colossal Kajal",
+        "description": "👁️ DEEP BLACK: Intense color in single stroke. ⏱️ 24-HOUR STAY: Smudge-proof and waterproof. 🖊️ TWIST-UP DESIGN: Easy application, no sharpening. 🌧️ RAIN & HUMIDITY PROOF: Perfect for Indian weather. 👁️‍🗨️ OPHTHALMOLOGIST TESTED: Safe for sensitive eyes. 0.35g retractable pencil.",
+        "price": 225,
+        "category": "beauty",
+        "image_url": "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?q=80&w=800",
+        "stock": 400,
+        "avg_rating": 4.3,
+        "rating_count": 345678
+    },
+    {
+        "name": "Atomic Habits by James Clear",
+        "description": "📚 #1 BESTSELLER: Over 10 million copies sold worldwide. 💡 LIFE-CHANGING: Learn to build good habits and break bad ones. 🧠 SCIENCE-BACKED: Based on proven psychology and neuroscience. ✍️ PRACTICAL STRATEGIES: Easy-to-apply frameworks. 📖 320 PAGES: Paperback edition. Perfect for self-improvement enthusiasts.",
+        "price": 499,
+        "category": "books",
+        "image_url": "https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=800",
+        "stock": 100,
+        "avg_rating": 4.7,
+        "rating_count": 156789
+    },
+    {
+        "name": "The Psychology of Money by Morgan Housel",
+        "description": "💰 TIMELESS LESSONS: 19 short stories about wealth and happiness. 📊 FINANCIAL WISDOM: Understanding behavior with money. 🏆 AWARD-WINNING: Multiple book of the year awards. ✍️ EASY READ: Accessible writing, profound insights. 📖 256 PAGES: Paperback edition. Essential read for investors and savers.",
+        "price": 399,
+        "category": "books",
+        "image_url": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=800",
+        "stock": 120,
+        "avg_rating": 4.6,
+        "rating_count": 89012
+    },
+    {
+        "name": "Rich Dad Poor Dad by Robert Kiyosaki",
+        "description": "💵 FINANCIAL CLASSIC: Over 32 million copies sold. 🏠 REAL ESTATE: Learn about assets vs liabilities. 📈 MONEY MINDSET: Change how you think about wealth. 👨‍👦 TWO PERSPECTIVES: Lessons from two father figures. 📖 336 PAGES: 25th Anniversary Edition. Required reading for financial literacy.",
+        "price": 349,
+        "category": "books",
+        "image_url": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800",
+        "stock": 150,
+        "avg_rating": 4.5,
+        "rating_count": 234567
+    },
+    {
+        "name": "Ikigai: The Japanese Secret to a Long and Happy Life",
+        "description": "🌸 JAPANESE WISDOM: Discover your reason for being. 🧘 MINDFULNESS: Secrets from Okinawan centenarians. 💪 FIND PURPOSE: Intersection of passion, mission, vocation, profession. ✍️ INSPIRING STORIES: Real-life examples and practices. 📖 208 PAGES: Paperback. Transform your life with ancient wisdom.",
+        "price": 299,
+        "category": "books",
+        "image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800",
+        "stock": 180,
+        "avg_rating": 4.4,
+        "rating_count": 67890
+    },
+    {
+        "name": "The Alchemist by Paulo Coelho",
+        "description": "✨ GLOBAL PHENOMENON: Over 150 million copies sold. 🌍 TRANSLATED: Available in 80 languages worldwide. 🐪 JOURNEY OF DISCOVERY: Follow Santiago's quest for treasure. 💫 INSPIRATIONAL: About pursuing your dreams. 📖 208 PAGES: Beautiful anniversary edition. A book that changes lives.",
+        "price": 299,
+        "category": "books",
+        "image_url": "https://images.unsplash.com/photo-1543003919-a995d5225382?q=80&w=800",
+        "stock": 200,
+        "avg_rating": 4.6,
+        "rating_count": 456789
+    },
+    {
+        "name": "Fitbit Inspire 3 Fitness Tracker",
+        "description": "❤️ 24/7 HEART RATE: Continuous health monitoring. 😴 SLEEP TRACKING: Sleep stages and sleep score. 📊 STRESS MANAGEMENT: Stress detection and guided breathing. 🏃 20+ EXERCISE MODES: Auto-track workouts. 🔋 10-DAY BATTERY: Extended battery life. Water resistant to 50m. Includes 6-month Fitbit Premium trial.",
+        "price": 8999,
+        "category": "sports",
+        "image_url": "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?q=80&w=800",
+        "stock": 70,
+        "avg_rating": 4.3,
+        "rating_count": 34567
+    },
+    {
+        "name": "Strauss Yoga Mat 6mm",
+        "description": "🧘 PREMIUM NBR FOAM: 6mm thickness for joint protection. 📏 183 x 61 CM: Standard size for all practices. 🛡️ ANTI-SLIP: Textured surface prevents sliding. 💪 DURABLE: High-density foam, long-lasting. 🎒 CARRYING STRAP: Easy to transport. Available in 8 colors. Eco-friendly and phthalate-free.",
+        "price": 499,
+        "category": "sports",
+        "image_url": "https://images.unsplash.com/photo-1592432678899-906d6499810d?q=80&w=800",
+        "stock": 200,
+        "avg_rating": 4.2,
+        "rating_count": 89012
+    },
+    {
+        "name": "Boldfit Resistance Bands Set",
+        "description": "💪 5 RESISTANCE LEVELS: Extra-light to extra-heavy (5-50 lbs). 🏠 HOME GYM ESSENTIAL: Full-body workout anywhere. 🛡️ NATURAL LATEX: Durable, snap-resistant bands. 🔗 INCLUDES ACCESSORIES: Door anchor, handles, ankle straps. 📚 EXERCISE GUIDE: 30+ exercises included. Travel-friendly carry bag. Ideal for physio and strength training.",
+        "price": 599,
+        "category": "sports",
+        "image_url": "https://images.unsplash.com/photo-1598289431512-b97b0917abbc?q=80&w=800",
+        "stock": 180,
+        "avg_rating": 4.3,
+        "rating_count": 56789
+    },
+    {
+        "name": "Cosco Cricket Bat Kashmir Willow",
+        "description": "🏏 KASHMIR WILLOW: Premium grade wood for powerful shots. ⚖️ SHORT HANDLE: Perfect balance for adults. 🛡️ TOE GUARD: Reinforced toe protection. 🌾 GRAINS: 6-8 grains for optimal performance. 📏 SIZE: Full, suitable for adults. Oil-treated for durability. Includes bat cover.",
+        "price": 1299,
+        "category": "sports",
+        "image_url": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=800",
+        "stock": 100,
+        "avg_rating": 4.1,
+        "rating_count": 23456
+    },
+    {
+        "name": "Nivia Storm Football Size 5",
+        "description": "⚽ SIZE 5: Official match size for adults. 🧵 32 PANEL DESIGN: Classic construction for true flight. 💨 RUBBERIZED: All-weather durability. ⚖️ BALANCED WEIGHT: FIFA specified (410-450g). 🏟️ MULTI-SURFACE: Grass, turf, and indoor. Hand-stitched. Includes pump pin. Perfect for training and matches.",
+        "price": 699,
+        "category": "sports",
+        "image_url": "https://images.unsplash.com/photo-1550191716-995816892331?q=80&w=800",
+        "stock": 150,
+        "avg_rating": 4.2,
+        "rating_count": 34567
+    },
+    {
+        "name": "PowerMax Fitness Motorized Treadmill",
+        "description": "🏃 2 HP MOTOR: Smooth and quiet operation. 📊 LED DISPLAY: Speed, time, distance, calories, heart rate. 🔧 12 PROGRAMS: Pre-set workout routines. 📐 90° FOLDING: Space-saving storage. 🛡️ SAFETY KEY: Emergency stop feature. Speed: 0.8-14 km/h. Max user weight: 110kg. 3 Year Motor Warranty.",
+        "price": 22999,
+        "category": "sports",
+        "image_url": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800",
+        "stock": 30,
+        "avg_rating": 4.0,
+        "rating_count": 12345
+    },
+    {
+        "name": "Funskool Giant Chess & Checkers",
+        "description": "♟️ GIANT SIZE: 60cm x 60cm mat, pieces up to 23cm tall. 🎮 2-IN-1: Play chess and checkers. 🌳 OUTDOOR FRIENDLY: Durable plastic pieces for garden play. 👨‍👩‍👧‍👦 FAMILY FUN: Perfect for all ages. 📚 INSTRUCTIONS: Rules and strategies included. Easy setup and storage. Great for developing strategic thinking.",
+        "price": 1999,
+        "category": "toys",
+        "image_url": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=800",
+        "stock": 60,
+        "avg_rating": 4.4,
+        "rating_count": 8765
+    },
+    {
+        "name": "LEGO Classic Creative Bricks Box",
+        "description": "🧱 790 PIECES: Endless building possibilities. 🎨 35 COLORS: Vibrant palette for creativity. 📚 INSTRUCTIONS: Build houses, vehicles, animals, and more. 🧠 STEM LEARNING: Develops problem-solving and motor skills. 👶 AGES 4-99: Fun for the whole family. Compatible with all LEGO sets. Includes storage box.",
+        "price": 2999,
+        "category": "toys",
+        "image_url": "https://images.unsplash.com/photo-1585366119957-e556f4bd8c78?q=80&w=800",
+        "stock": 80,
+        "avg_rating": 4.7,
+        "rating_count": 45678
+    },
+    {
+        "name": "Hot Wheels 20-Car Gift Pack",
+        "description": "🚗 20 CARS: Exciting variety of vehicles. 🎨 AUTHENTIC DESIGNS: Real car replicas and fantasy models. 📏 1:64 SCALE: Collectible die-cast metal. 🏎️ HOT WHEELS QUALITY: Since 1968. 🎁 GIFT READY: Perfect for birthdays and occasions. Compatible with all Hot Wheels tracks. Ages 3+.",
+        "price": 1299,
+        "category": "toys",
+        "image_url": "https://images.unsplash.com/photo-1532330393533-443990a51d10?q=80&w=800",
+        "stock": 100,
+        "avg_rating": 4.5,
+        "rating_count": 23456
+    },
+    {
+        "name": "Hasbro Monopoly Classic Board Game",
+        "description": "🎲 CLASSIC GAME: The world's favorite family game since 1935. 🏠 BUILD EMPIRE: Buy properties, build houses and hotels. 💵 MONOPOLY MONEY: Classic currency included. 👥 2-8 PLAYERS: Fun for the whole family. ⏱️ 60-180 MIN: Perfect game night length. Includes game guide. Ages 8+.",
+        "price": 1499,
+        "category": "toys",
+        "image_url": "https://images.unsplash.com/photo-1610819013583-2946c1097ce1?q=80&w=800",
+        "stock": 70,
+        "avg_rating": 4.6,
+        "rating_count": 67890
+    },
+    {
+        "name": "Toyshine Remote Control Helicopter",
+        "description": "🚁 3.5 CHANNEL: Up, down, forward, backward, left, right. 🔋 RECHARGEABLE: USB charging, 8-10 min flight time. 💡 LED LIGHTS: Cool night-flying experience. 🛡️ DURABLE: Built-in gyroscope for stability. 📡 2.4GHz: Interference-free control up to 15m. Indoor use. Ages 8+. Includes spare rotor.",
+        "price": 1199,
+        "category": "toys",
+        "image_url": "https://images.unsplash.com/photo-1473968512447-ac475371ad67?q=80&w=800",
+        "stock": 90,
+        "avg_rating": 4.0,
+        "rating_count": 12345
+    },
+    {
+        "name": "Tata Sampann Chana Dal 1kg",
+        "description": "🌾 PREMIUM QUALITY: 100% unpolished, high-protein dal. 🧬 NUTRITIOUS: Rich in fiber, iron, and vitamins. 🌿 NATURAL: No artificial colors or preservatives. 👨‍🍳 COOKS WELL: Consistent grain size, quick cooking. 🏭 TATA QUALITY: Trusted brand since 1868. Store in cool, dry place. FSSAI certified.",
+        "price": 175,
+        "category": "grocery",
+        "image_url": "https://images.unsplash.com/photo-1586201375761-838633c86178?q=80&w=800",
+        "stock": 500,
+        "avg_rating": 4.3,
+        "rating_count": 89012
+    },
+    {
+        "name": "Dabur Honey 1kg",
+        "description": "🍯 100% PURE: India's most trusted honey brand. 🌸 MULTIFLORA: Natural blend of wildflower nectar. 💪 IMMUNITY BOOSTER: Antioxidants and antibacterial properties. ☕ VERSATILE: Perfect for tea, toast, and cooking. 🏆 #1 BRAND: India's highest-selling honey. FSSAI certified. No added sugar.",
+        "price": 399,
+        "category": "grocery",
+        "image_url": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?q=80&w=800",
+        "stock": 300,
+        "avg_rating": 4.4,
+        "rating_count": 156789
+    },
+    {
+        "name": "Saffola Total Cooking Oil 5L",
+        "description": "❤️ HEART HEALTHY: Blend of rice bran and safflower oil. 🛡️ ANTIOXIDANTS: Natural vitamin E and oryzanol. ⬇️ CHOLESTEROL: Helps manage cholesterol levels. 🍳 MULTI-USE: All cooking methods - frying, sautéing, baking. 📊 LOSORB TECH: Absorbs 33% less oil in food. FSSAI certified. 5 Litre jar.",
+        "price": 899,
+        "category": "grocery",
+        "image_url": "https://images.unsplash.com/photo-1474979266404-7eaacabc8805?q=80&w=800",
+        "stock": 200,
+        "avg_rating": 4.2,
+        "rating_count": 67890
+    },
+    {
+        "name": "Cadbury Celebrations Premium Gift Pack",
+        "description": "🍫 ASSORTED CHOCOLATES: Dairy Milk, Silk, Bournville, and more. 🎁 PREMIUM PACKAGING: Elegant gift-ready box. 🎉 FESTIVE SPECIAL: Perfect for Diwali, Raksha Bandhan, weddings. 📦 VARIETY: 15+ different chocolate types. 💜 CADBURY QUALITY: India's favorite chocolate brand. Net weight: 281g.",
+        "price": 399,
+        "category": "grocery",
+        "image_url": "https://images.unsplash.com/photo-1582176604447-aa5144675974?q=80&w=800",
+        "stock": 400,
+        "avg_rating": 4.5,
+        "rating_count": 234567
+    },
+    {
+        "name": "Taj Mahal Tea 1kg",
+        "description": "☕ PREMIUM BLEND: Finest Assam and long leaf tea. 🌿 RICH AROMA: Distinctive taste and fragrance. ⏱️ PERFECT BREW: Every cup, every time. 🏆 INDIA'S FINEST: Preferred by tea connoisseurs. 🫖 TRADITION: Trusted for over 50 years. 1kg vacuum-packed. FSSAI certified.",
+        "price": 700,
+        "category": "grocery",
+        "image_url": "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=800",
+        "stock": 250,
+        "avg_rating": 4.6,
+        "rating_count": 89012
+    }
+]

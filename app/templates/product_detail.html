@@ -1,0 +1,283 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.name }} - ShopSmart{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="product-detail">
+        <!-- Product Gallery -->
+        <div class="product-gallery">
+            <div class="product-main-image">
+                {% if product.image_url %}
+                <img src="{{ product.image_url }}" alt="{{ product.name }}"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="image-placeholder" style="font-size: 5rem; display: none;">
+                    {% if product.category == 'electronics' %}📱
+                    {% elif product.category == 'fashion' %}👗
+                    {% elif product.category == 'home' %}🏠
+                    {% elif product.category == 'beauty' %}💄
+                    {% elif product.category == 'books' %}📚
+                    {% elif product.category == 'sports' %}🏃
+                    {% elif product.category == 'toys' %}🧸
+                    {% elif product.category == 'grocery' %}🛒
+                    {% else %}📦{% endif %}
+                </div>
+                {% else %}
+                <div class="image-placeholder" style="font-size: 5rem;">
+                    {% if product.category == 'electronics' %}📱
+                    {% elif product.category == 'fashion' %}👗
+                    {% elif product.category == 'home' %}🏠
+                    {% elif product.category == 'beauty' %}💄
+                    {% elif product.category == 'books' %}📚
+                    {% elif product.category == 'sports' %}🏃
+                    {% elif product.category == 'toys' %}🧸
+                    {% elif product.category == 'grocery' %}🛒
+                    {% else %}📦{% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info">
+            <span class="product-category">{{ product.category }}</span>
+            <h1>{{ product.name }}</h1>
+
+            <div class="product-meta">
+                <div class="product-rating">
+                    <div class="stars">
+                        {% for i in range(5) %}
+                        {% if i < product.avg_rating|round %}⭐{% else %}☆{% endif %} {% endfor %} </div>
+                            <span class="rating-count">{{ product.avg_rating }} ({{ product.rating_count }}
+                                reviews)</span>
+                    </div>
+
+                    <div class="stock-status {% if product.stock > 10 %}in-stock{% else %}low-stock{% endif %}">
+                        {% if product.stock > 10 %}
+                        ✓ In Stock
+                        {% elif product.stock > 0 %}
+                        ⚠️ Only {{ product.stock }} left
+                        {% else %}
+                        ✕ Out of Stock
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="product-price">₹{{ "%.0f"|format(product.price) }}</div>
+
+                <p class="product-description">{{ product.description }}</p>
+
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" id="decreaseQty">−</button>
+                        <span class="quantity-value" id="quantityValue">1</span>
+                        <button class="quantity-btn" id="increaseQty">+</button>
+                    </div>
+
+                    <button class="btn btn-primary btn-lg" id="buyNowBtn" {% if product.stock==0 %}disabled{% endif %}>
+                        🛒 Buy Now
+                    </button>
+
+                    <button class="btn btn-secondary btn-icon" id="favoriteBtn" data-product-id="{{ product.id }}"
+                        title="{% if is_favorite %}Remove from favorites{% else %}Add to favorites{% endif %}">
+                        {% if is_favorite %}❤️{% else %}🤍{% endif %}
+                    </button>
+                </div>
+
+                <!-- Features -->
+                <div
+                    style="background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 20px; margin-top: 24px;">
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: center;">
+                        <div>
+                            <div style="font-size: 1.5rem; margin-bottom: 8px;">🚚</div>
+                            <div style="font-size: 0.875rem; font-weight: 500;">Free Shipping</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">On orders over $50</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 1.5rem; margin-bottom: 8px;">↩️</div>
+                            <div style="font-size: 0.875rem; font-weight: 500;">Easy Returns</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">30-day return policy</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 1.5rem; margin-bottom: 8px;">🔒</div>
+                            <div style="font-size: 0.875rem; font-weight: 500;">Secure Payment</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">100% protected</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="reviews-section">
+            <div class="reviews-header">
+                <h2>Customer Reviews</h2>
+                <button class="btn btn-primary" id="writeReviewBtn">Write a Review</button>
+            </div>
+
+            <!-- Review Form (Hidden by default) -->
+            <div id="reviewForm" style="display: none; margin-bottom: 32px;">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 style="margin-bottom: 16px;">Write Your Review</h4>
+                        <form id="submitReviewForm">
+                            <div class="form-group">
+                                <label class="form-label">Rating</label>
+                                <div class="rating-select" id="ratingSelect"
+                                    style="font-size: 1.5rem; cursor: pointer;">
+                                    <span data-rating="1">☆</span>
+                                    <span data-rating="2">☆</span>
+                                    <span data-rating="3">☆</span>
+                                    <span data-rating="4">☆</span>
+                                    <span data-rating="5">☆</span>
+                                </div>
+                                <input type="hidden" name="rating" id="ratingInput" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Your Review</label>
+                                <textarea class="form-input" name="comment" id="reviewComment" rows="4"
+                                    placeholder="Share your experience with this product..."></textarea>
+                            </div>
+
+                            <div style="display: flex; gap: 12px;">
+                                <button type="submit" class="btn btn-primary">Submit Review</button>
+                                <button type="button" class="btn btn-secondary" id="cancelReview">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews List -->
+            {% if reviews %}
+            <div id="reviewsList">
+                {% for review in reviews %}
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">{{ review.user.name[0].upper() }}</div>
+                            <div>
+                                <div class="reviewer-name">{{ review.user.name }}</div>
+                                <div class="review-date">{{ review.created_at.strftime('%b %d, %Y') }}</div>
+                            </div>
+                        </div>
+                        <div class="stars">
+                            {% for i in range(5) %}
+                            {% if i < review.rating %}⭐{% else %}☆{% endif %} {% endfor %} </div>
+                        </div>
+                        <p class="review-content">{{ review.comment }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="empty-state">
+                    <div class="empty-state-icon">📝</div>
+                    <h3>No reviews yet</h3>
+                    <p>Be the first to review this product!</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <script>
+            const productId = {{ product.id }};
+            const productName = "{{ product.name }}";
+            const productPrice = {{ product.price }};
+            let quantity = 1;
+            let selectedRating = 0;
+
+            // Quantity controls
+            document.getElementById('decreaseQty').addEventListener('click', function () {
+                if (quantity > 1) {
+                    quantity--;
+                    document.getElementById('quantityValue').textContent = quantity;
+                }
+            });
+
+            document.getElementById('increaseQty').addEventListener('click', function () {
+                if (quantity < {{ product.stock }}) {
+                    quantity++;
+                    document.getElementById('quantityValue').textContent = quantity;
+                }
+            });
+
+            // Buy Now - Open chatbot
+            document.getElementById('buyNowBtn').addEventListener('click', function () {
+                window.openChatWithMessage(`I want to order ${quantity}x ${productName}`);
+            });
+
+            // Favorite toggle
+            document.getElementById('favoriteBtn').addEventListener('click', async function () {
+                try {
+                    const response = await fetch(`/products/${productId}/favorite`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' }
+                    });
+                    const data = await response.json();
+                    if (data.success) {
+                        this.innerHTML = data.action === 'added' ? '❤️' : '🤍';
+                    }
+                } catch (error) {
+                    console.error('Error toggling favorite:', error);
+                }
+            });
+
+            // Review form toggle
+            document.getElementById('writeReviewBtn').addEventListener('click', function () {
+                document.getElementById('reviewForm').style.display = 'block';
+                this.style.display = 'none';
+            });
+
+            document.getElementById('cancelReview').addEventListener('click', function () {
+                document.getElementById('reviewForm').style.display = 'none';
+                document.getElementById('writeReviewBtn').style.display = 'inline-flex';
+            });
+
+            // Rating selection
+            document.getElementById('ratingSelect').addEventListener('click', function (e) {
+                const rating = e.target.dataset.rating;
+                if (rating) {
+                    selectedRating = parseInt(rating);
+                    document.getElementById('ratingInput').value = selectedRating;
+
+                    const stars = this.querySelectorAll('span');
+                    stars.forEach((star, index) => {
+                        star.textContent = index < selectedRating ? '⭐' : '☆';
+                    });
+                }
+            });
+
+            // Submit review
+            document.getElementById('submitReviewForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                if (!selectedRating) {
+                    alert('Please select a rating');
+                    return;
+                }
+
+                try {
+                    const response = await fetch(`/products/${productId}/review`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            rating: selectedRating,
+                            comment: document.getElementById('reviewComment').value
+                        })
+                    });
+
+                    const data = await response.json();
+                    if (data.success) {
+                        alert('Review submitted successfully!');
+                        window.location.reload();
+                    } else {
+                        alert(data.message || 'Failed to submit review');
+                    }
+                } catch (error) {
+                    console.error('Error submitting review:', error);
+                    alert('Failed to submit review');
+                }
+            });
+        </script>
+        {% endblock %}

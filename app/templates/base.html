@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ShopSmart{% endblock %}</title>
+    <meta name="description" content="{% block description %}Premium e-commerce store with AI-powered shopping assistant{% endblock %}">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% if current_user.is_authenticated %}
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="{{ url_for('products.list_products') }}" class="logo">
+                    <div class="logo-icon">🛒</div>
+                    <span>ShopSmart</span>
+                </a>
+                
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="{{ url_for('products.list_products') }}" class="{% if request.endpoint == 'products.list_products' %}active{% endif %}">
+                            <span>🏠</span> Products
+                        </a></li>
+                        <li><a href="{{ url_for('products.list_favorites') }}" class="{% if request.endpoint == 'products.list_favorites' %}active{% endif %}">
+                            <span>❤️</span> Favorites
+                        </a></li>
+                        <li><a href="{{ url_for('orders.list_orders') }}" class="{% if request.endpoint == 'orders.list_orders' %}active{% endif %}">
+                            <span>📦</span> Orders
+                        </a></li>
+                        <li><a href="{{ url_for('main.dashboard') }}" class="{% if request.endpoint == 'main.dashboard' %}active{% endif %}">
+                            <span>📊</span> Dashboard
+                        </a></li>
+                    </ul>
+                </nav>
+                
+                <div class="user-menu">
+                    <div class="user-avatar" title="{{ current_user.name }}">
+                        {{ current_user.name[0].upper() }}
+                    </div>
+                    <a href="{{ url_for('auth.logout') }}" class="btn btn-ghost btn-sm">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% endif %}
+    
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="container" style="margin-top: 16px;">
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endwith %}
+    
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    {% if current_user.is_authenticated %}
+    <!-- Chatbot Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle" title="Chat with AI Assistant">
+            💬
+        </button>
+        
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div>
+                    <h4>AI Shopping Assistant</h4>
+                    <p>Ask me anything about our products!</p>
+                </div>
+                <button class="chat-close" id="chatClose">✕</button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-message bot">
+                    Hello {{ current_user.name }}! 👋 I'm your AI shopping assistant. I can help you find products, answer questions, and even help you place orders. How can I assist you today?
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Type your message..." autocomplete="off">
+                <button class="chat-send" id="chatSend">➤</button>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

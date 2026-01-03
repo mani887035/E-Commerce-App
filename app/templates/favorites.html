@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Your Favorites - ShopSmart{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1 class="page-title">Your Favorites</h1>
+        <p class="page-subtitle">Products you've saved for later</p>
+    </div>
+</div>
+
+<div class="container">
+    {% if favorites %}
+    <div class="products-grid">
+        {% for fav in favorites %}
+        {% set product = fav.product %}
+        <div class="card product-card">
+            <button class="product-favorite active" data-product-id="{{ product.id }}" title="Remove from favorites">
+                ❤️
+            </button>
+
+            <a href="{{ url_for('products.product_detail', product_id=product.id) }}">
+                <div class="card-image">
+                    {% if product.image_url %}
+                    <img src="{{ product.image_url }}" alt="{{ product.name }}"
+                        onerror="this.parentNode.innerHTML='<div class=\'image-placeholder\'>📦</div>'">
+                    {% else %}
+                    <div class="image-placeholder">
+                        {% if product.category == 'toys' %}🧸
+                        {% elif product.category == 'electronics' %}📱
+                        {% elif product.category == 'dresses' %}👗
+                        {% elif product.category == 'cosmetics' %}💄
+                        {% elif product.category == 'footwear' %}👟
+                        {% else %}📦{% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+            </a>
+
+            <div class="card-body">
+                <span class="product-category">{{ product.category }}</span>
+                <h3 class="card-title">
+                    <a href="{{ url_for('products.product_detail', product_id=product.id) }}">
+                        {{ product.name }}
+                    </a>
+                </h3>
+
+                <div class="product-rating">
+                    <div class="stars">
+                        {% for i in range(5) %}
+                        {% if i < product.avg_rating|round %}⭐{% else %}☆{% endif %} {% endfor %} </div>
+                            <span class="rating-count">({{ product.rating_count }})</span>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;">
+                        <span class="card-price">₹{{ "%.0f"|format(product.price) }}</span>
+                        <button class="btn btn-primary btn-sm"
+                            onclick="window.openChatWithMessage('I want to order {{ product.name }}')">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <div class="empty-state-icon">❤️</div>
+            <h3>No favorites yet</h3>
+            <p>Start exploring and save products you love!</p>
+            <a href="{{ url_for('products.list_products') }}" class="btn btn-primary">Browse Products</a>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        document.querySelectorAll('.product-favorite').forEach(btn => {
+            btn.addEventListener('click', async function () {
+                const productId = this.dataset.productId;
+                try {
+                    const response = await fetch(`/products/${productId}/favorite`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' }
+                    });
+                    const data = await response.json();
+                    if (data.success && data.action === 'removed') {
+                        this.closest('.product-card').remove();
+
+                        // Check if no more favorites
+                        if (document.querySelectorAll('.product-card').length === 0) {
+                            location.reload();
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error removing favorite:', error);
+                }
+            });
+        });
+    </script>
+    {% endblock %}

@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block title %}Products - ShopSmart{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1 class="page-title">Discover Products</h1>
+        <p class="page-subtitle">Browse our collection of quality products across all categories</p>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Filters Bar -->
+    <div class="filters-bar">
+        <div class="category-tabs">
+            <a href="{{ url_for('products.list_products') }}"
+                class="category-tab {% if not current_category %}active{% endif %}">
+                All Products
+            </a>
+            {% for cat in categories %}
+            <a href="{{ url_for('products.list_products', category=cat) }}"
+                class="category-tab {% if current_category == cat %}active{% endif %}">
+                {% if cat == 'electronics' %}📱{% elif cat == 'fashion' %}👗{% elif cat == 'home' %}🏠{% elif cat == 'beauty' %}💄{% elif cat == 'books' %}📚{% elif cat == 'sports' %}🏃{% elif cat == 'toys' %}🧸{% elif cat == 'grocery' %}🛒{% endif %}
+                {{ cat|title }}
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Search products..." value="{{ search_query or '' }}">
+        </div>
+    </div>
+
+    <!-- Products Grid -->
+    {% if products %}
+    <div class="products-grid" id="productsGrid">
+        {% for product in products %}
+        <div class="card product-card" data-product-id="{{ product.id }}">
+            <button class="product-favorite {% if product.id in user_favorites %}active{% endif %}"
+                data-product-id="{{ product.id }}" title="Add to favorites">
+                {% if product.id in user_favorites %}❤️{% else %}🤍{% endif %}
+            </button>
+
+            <a href="{{ url_for('products.product_detail', product_id=product.id) }}">
+                <div class="card-image">
+                    {% if product.image_url %}
+                    <img src="{{ product.image_url }}" alt="{{ product.name }}"
+                        onerror="this.parentNode.innerHTML='<div class=\'image-placeholder\'>📦</div>'">
+                    {% else %}
+                    <div class="image-placeholder">
+                        {% if product.category == 'electronics' %}📱
+                        {% elif product.category == 'fashion' %}👗
+                        {% elif product.category == 'home' %}🏠
+                        {% elif product.category == 'beauty' %}💄
+                        {% elif product.category == 'books' %}📚
+                        {% elif product.category == 'sports' %}🏃
+                        {% elif product.category == 'toys' %}🧸
+                        {% elif product.category == 'grocery' %}🛒
+                        {% else %}📦{% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+            </a>
+
+            <div class="card-body">
+                <span class="product-category">{{ product.category }}</span>
+                <h3 class="card-title">
+                    <a href="{{ url_for('products.product_detail', product_id=product.id) }}">
+                        {{ product.name }}
+                    </a>
+                </h3>
+
+                <div class="product-rating">
+                    <div class="stars">
+                        {% for i in range(5) %}
+                        {% if i < product.avg_rating|round %}⭐{% else %}☆{% endif %} {% endfor %} </div>
+                            <span class="rating-count">({{ product.rating_count }})</span>
+                    </div>
+
+                    <p class="card-text">{{ product.description[:80] }}...</p>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="card-price">₹{{ "%.0f"|format(product.price) }}</span>
+                        <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="{{ product.id }}">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <div class="empty-state-icon">🔍</div>
+            <h3>No products found</h3>
+            <p>Try adjusting your search or filters to find what you're looking for.</p>
+            <a href="{{ url_for('products.list_products') }}" class="btn btn-primary">View All Products</a>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        // Search functionality
+        let searchTimeout;
+        document.getElementById('searchInput').addEventListener('input', function (e) {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const query = e.target.value.trim();
+                const url = new URL(window.location.href);
+                if (query) {
+                    url.searchParams.set('search', query);
+                } else {
+                    url.searchParams.delete('search');
+                }
+                window.location.href = url.toString();
+            }, 500);
+        });
+
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                const productId = this.dataset.productId;
+                // Open chatbot with order intent
+                window.openChatWithMessage(`I want to order product #${productId}`);
+            });
+        });
+    </script>
+    {% endblock %}

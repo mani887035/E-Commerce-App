@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+
+{% block title %}Your Orders - ShopSmart{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1 class="page-title">Your Orders</h1>
+        <p class="page-subtitle">Track and manage your orders</p>
+    </div>
+</div>
+
+<div class="container">
+    {% if orders %}
+    <div class="card">
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td><strong>#{{ order.id }}</strong></td>
+                    <td>{{ order.order_date.strftime('%b %d, %Y') }}</td>
+                    <td>{{ order.items.count() }} item(s)</td>
+                    <td><strong>₹{{ "%.0f"|format(order.total_amount) }}</strong></td>
+                    <td><span class="order-status {{ order.status }}">{{ order.status|title }}</span></td>
+                    <td>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-ghost btn-sm view-order-btn" data-order-id="{{ order.id }}">
+                                View
+                            </button>
+                            {% if order.status == 'pending' %}
+                            <button class="btn btn-success btn-sm confirm-order-btn" data-order-id="{{ order.id }}">
+                                Confirm
+                            </button>
+                            <button class="btn btn-danger btn-sm cancel-order-btn" data-order-id="{{ order.id }}">
+                                Cancel
+                            </button>
+                            {% elif order.status == 'confirmed' %}
+                            <button class="btn btn-danger btn-sm cancel-order-btn" data-order-id="{{ order.id }}">
+                                Cancel
+                            </button>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="empty-state">
+        <div class="empty-state-icon">📦</div>
+        <h3>No orders yet</h3>
+        <p>Start shopping and your orders will appear here!</p>
+        <a href="{{ url_for('products.list_products') }}" class="btn btn-primary">Start Shopping</a>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Order Detail Modal -->
+<div id="orderModal"
+    style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+    <div class="card" style="max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;">
+        <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 id="modalTitle">Order Details</h3>
+                <button class="btn btn-ghost btn-sm" onclick="closeOrderModal()">✕</button>
+            </div>
+            <div id="orderDetails"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // View order details
+    document.querySelectorAll('.view-order-btn').forEach(btn => {
+        btn.addEventListener('click', async function () {
+            const orderId = this.dataset.orderId;
+            try {
+                const response = await fetch(`/orders/${orderId}`);
+                const data = await response.json();
+
+                if (data.success) {
+                    const order = data.order;
+                    document.getElementById('modalTitle').textContent = `Order #${order.id}`;
+                    document.getElementById('orderDetails').innerHTML = `
+                        <div style="margin-bottom: 16px;">
+                            <p><strong>Date:</strong> ${new Date(order.order_date).toLocaleString()}</p>
+                            <p><strong>Status:</strong> <span class="order-status ${order.status}">${order.status}</span></p>
+                            ${order.shipping_address ? `<p><strong>Address:</strong> ${order.shipping_address}</p>` : ''}
+                        </div>
+                        <h4 style="margin-bottom: 12px;">Items</h4>
+                        ${order.items.map(item => `
+                            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border-color);">
+                                <span>${item.product_name} × ${item.quantity}</span>
+                                <span>₹${Math.round(item.subtotal)}</span>
+                            </div>
+                        `).join('')}
+                        <div style="display: flex; justify-content: space-between; padding: 16px 0; font-weight: 600; font-size: 1.125rem;">
+                            <span>Total</span>
+                            <span>₹${Math.round(order.total_amount)}</span>
+                        </div>
+                    `;
+                    document.getElementById('orderModal').style.display = 'flex';
+                }
+            } catch (error) {
+                console.error('Error loading order:', error);
+            }
+        });
+    });
+
+    function closeOrderModal() {
+        document.getElementById('orderModal').style.display = 'none';
+    }
+
+    document.getElementById('orderModal').addEventListener('click', function (e) {
+        if (e.target === this) closeOrderModal();
+    });
+
+    // Confirm order
+    document.querySelectorAll('.confirm-order-btn').forEach(btn => {
+        btn.addEventListener('click', async function () {
+            const orderId = this.dataset.orderId;
+            if (!confirm('Confirm this order?')) return;
+
+            try {
+                const response = await fetch(`/orders/${orderId}/confirm`, { method: 'POST' });
+                const data = await response.json();
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert(data.message || 'Failed to confirm order');
+                }
+            } catch (error) {
+                console.error('Error confirming order:', error);
+            }
+        });
+    });
+
+    // Cancel order
+    document.querySelectorAll('.cancel-order-btn').forEach(btn => {
+        btn.addEventListener('click', async function () {
+            const orderId = this.dataset.orderId;
+            if (!confirm('Are you sure you want to cancel this order?')) return;
+
+            try {
+                const response = await fetch(`/orders/${orderId}/cancel`, { method: 'POST' });
+                const data = await response.json();
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert(data.message || 'Failed to cancel order');
+                }
+            } catch (error) {
+                console.error('Error cancelling order:', error);
+            }
+        });
+    });
+</script>
+{% endblock %}

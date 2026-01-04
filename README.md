@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ShopSmart - E-Commerce Application
 
 A full-stack e-commerce web application with AI-powered chatbot using LangChain RAG.
@@ -100,3 +101,7 @@ ecommerce/
 | `/orders/create` | POST | Create order |
 | `/chat/message` | POST | Send chat message |
 | `/chat/order-verify` | POST | Verify/confirm order |
+=======
+# E-Commerce-App
+online shopping
+>>>>>>> 9c23c9b5b8693cc36e5f0d46557eaf0152e847d5
